@@ -17,6 +17,10 @@ This lab simulates a **real Kubernetes multi-node environment** instead of a sin
 
 [▶ Watch the Full Tutorial on YouTube](https://youtu.be/ir01Umpmefc)
 
+## 🎥 Full Video Tutorial
+
+📺 Watch the complete walkthrough on YouTube:  
+https://youtu.be/ir01Umpmefc
 ---
 
 ## Lab Architecture
