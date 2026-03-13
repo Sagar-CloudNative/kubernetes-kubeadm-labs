@@ -5,6 +5,24 @@
 ![Platform](https://img.shields.io/badge/Platform-RHEL%20%7C%20Rocky%20Linux-red)
 ![YouTube](https://img.shields.io/badge/YouTube-Subscribe-red?logo=youtube)
 
+This lab series uses a simple multi-node Kubernetes cluster built with **kubeadm**.
+
+```
+        +----------------------+
+        |   Control Plane      |
+        |      k8s-master      |
+        |  API Server / etcd   |
+        +----------+-----------+
+                   |
+        +----------+-----------+
+        |                      |
++-------+--------+     +-------+--------+
+|   Worker Node  |     |   Worker Node  |
+|   k8s-worker   |     |  k8s-worker2   |
+| Pods / CNI     |     | Pods / CNI     |
++----------------+     +----------------+
+```
+
 Hands-on Kubernetes labs designed for **System Administrators and Developers**.  
 This repository contains all commands, YAML files, and instructions used in the video tutorials.
 
@@ -31,6 +49,15 @@ Watch the complete **Kubernetes Real-World Labs (kubeadm)** tutorial series:
 | **07** | Kubernetes LoadBalancer on Bare Metal using MetalLB | ✅ Available |
 | **08** | Kubernetes etcd Backup & Restore (Disaster Recovery) | ⏳ Upcoming |
 ---
+
+## 🚀 Quick Start
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Sagar-CloudNative/kubernetes-kubeadm-labs.git
+cd kubernetes-kubeadm-labs
+```
 
 ## 📂 Repository Structure
 
