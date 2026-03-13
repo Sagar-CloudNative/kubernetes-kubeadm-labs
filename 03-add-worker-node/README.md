@@ -10,9 +10,9 @@ This lab shows the **complete real-world process** of expanding a Kubernetes clu
 
 ## 🎥 Video Tutorial
 
-Watch the complete **Kubernetes Real-World Labs Playlist**:
+Watch the step-by-step cluster expansion guide here:
 
-👉 https://youtube.com/playlist?list=PL4y5PiOmBnA8-pXEE3Xwz28_QF-geOurS
+👉 [**Watch the Lab 03 Tutorial**](https://youtu.be/tFtJE2BwmVI?si=ckN1OyUWs5PYZZMY)
 
 ---
 
