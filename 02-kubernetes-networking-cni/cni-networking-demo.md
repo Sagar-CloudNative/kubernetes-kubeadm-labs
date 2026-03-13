@@ -1,149 +1,132 @@
-This contains the **hands-on validation from your script**.
-
-```markdown
 # CNI Networking Validation Demo
 
-This lab validates that Kubernetes networking is functioning correctly using the **Flannel CNI plugin**.
+This lab validates that the Kubernetes network fabric is functioning correctly using the Flannel CNI plugin. Follow these steps to verify your cluster's health.
 
 ---
 
-# Step 1 — Verify CNI Plugin
+## Step 1 — Verify CNI Plugin Status
 
-Check the Flannel pods.
+The CNI runs as a DaemonSet, meaning one pod should exist on every node in the cluster.
 
 ```bash
 kubectl get pods -n kube-flannel
+```
 
-You should see one Flannel pod running on each node.
+**Expected Result:**
+You should see a `Running` status for a Flannel pod on both the master and the worker.
 
-Example:
+```text
+NAME                    READY   STATUS    RESTARTS   AGE
+kube-flannel-ds-xxxxx   1/1     Running   0          5m
+kube-flannel-ds-yyyyy   1/1     Running   0          5m
+```
 
-kube-flannel-ds-xxxxx   Running
-kube-flannel-ds-yyyyy   Running
+---
 
-This confirms:
+## Step 2 — Verify Node Readiness
 
-CNI plugin is installed
+Nodes remain in `NotReady` status until the CNI plugin is active.
 
-Networking is enabled across nodes
-
-Step 2 — Verify Node Status
-
-Check node status.
-
+```bash
 kubectl get nodes
+```
 
-Example output:
+**Expected Result:**
 
-NAME         STATUS   ROLES           AGE
-k8s-master   Ready    control-plane   20m
-k8s-worker   Ready    <none>          15m
+```text
+NAME         STATUS   ROLES           AGE   VERSION
+k8s-master   Ready    control-plane   20m   v1.29.x
+k8s-worker   Ready    <none>          15m   v1.29.x
+```
 
-Nodes remain NotReady until a CNI plugin is installed.
+---
 
-Step 3 — Verify System Pods
+## Step 3 — Verify Core System Services
+
+CoreDNS is the internal DNS provider for Kubernetes. It will stay in a `Pending` state until networking is configured.
+
+```bash
 kubectl get pods -n kube-system
+```
 
-Example:
+**Expected Result:**
+Verify that `coredns` pods have moved to the `Running` state.
 
-coredns-xxxxx    Running
-kube-proxy       Running
+---
 
-CoreDNS requires networking to function.
+## Step 4 — Create Test Pods
 
-Without CNI it would remain Pending.
+We will deploy two lightweight pods to test the virtual network.
 
-Step 4 — Create Test Pods
-
-Create an NGINX pod.
-
+```bash
+# Deploy NGINX (Server)
 kubectl run pod-a --image=nginx --restart=Never
 
-Create a BusyBox pod for testing.
-
+# Deploy BusyBox (Client)
 kubectl run pod-b --image=busybox --restart=Never -- sleep 3600
-Step 5 — Check Pod IPs
+```
+
+---
+
+## Step 5 — Inspect Pod IP Assignment
+
+Each Pod in Kubernetes must receive a unique IP address from the Pod CIDR range.
+
+```bash
 kubectl get pods -o wide
+```
 
-Example:
+**Expected Result:**
+Each pod will have a unique IP (e.g., `10.244.1.2` and `10.244.1.3`).
 
-NAME    READY   STATUS   IP           NODE
-pod-a   1/1     Running  10.244.1.2   k8s-worker
-pod-b   1/1     Running  10.244.1.3   k8s-worker
+---
 
-Each Pod receives its own cluster IP address.
+## Step 6 — Test Cross-Pod Communication
 
-Step 6 — Test Pod-to-Pod Communication
+We will now enter `pod-b` and attempt to reach `pod-a` over the network.
 
-Get the IP of Pod A.
+**1. Identify the IP of Pod A:**
 
+```bash
 kubectl get pod pod-a -o wide
+```
 
-Enter Pod B.
+**2. Execute a shell inside Pod B:**
 
+```bash
 kubectl exec -it pod-b -- sh
+```
 
-Ping Pod A.
+**3. Ping Pod A using its IP:**
 
+```bash
 ping <POD-A-IP>
+```
 
-Example output:
+**Expected Result:**
 
+```text
 64 bytes from 10.244.1.2: seq=0 ttl=64 time=1.1 ms
 64 bytes from 10.244.1.2: seq=1 ttl=64 time=0.06 ms
+```
+*(Successful pings confirm that the Flannel CNI is correctly routing traffic between containers.)*
 
-Successful ping confirms:
+**4. Exit the pod:**
 
-Pod networking works
-
-CNI is functioning correctly
-
-Exit the pod.
-
+```bash
 exit
-Result
-
-You have successfully validated:
-
-CNI installation
-
-Node readiness
-
-Pod IP assignment
-
-Pod-to-Pod communication
-
+```
 
 ---
 
-# After Adding This
+## Summary of Results
 
-Your repo becomes:
-
-
-kubernetes-kubeadm-labs
-│
-├── 01-kubeadm-cluster-setup
-│
-└── 02-kubernetes-networking-cni
-├── README.md
-├── commands.md
-├── cni-networking-demo.md
-└── images/
-
-
-This is **exactly how Kubernetes training labs are structured**.
+By completing this demo, you have successfully validated:
+* CNI Installation: The Flannel DaemonSet is active.
+* Node Readiness: Nodes have transitioned to `Ready`.
+* IPAM: Kubernetes successfully assigned unique IPs to Pods.
+* Connectivity: Pod-to-Pod communication is fully operational.
 
 ---
-
-✅ Next video (very likely in your flow) will be something like:
-
-
-03-multi-node-cluster-expansion
-
-
-because your script mentions **adding more worker nodes in the next video**.
-
----
-
-If you want, I can also show you a **very small GitHub improvement (used by DevOps courses)** that will make your repo **look like a full Kubernetes course instead of just a code repo**.
+| [« Lab 01: Cluster Setup](../01-kubeadm-cluster-setup/README.md) | [Main Directory](../../README.md) | [Lab 03: Cluster Expansion »](../03-multi-node-cluster-expansion/README.md) |
+| :--- | :---: | ---: |
