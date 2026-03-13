@@ -23,14 +23,13 @@ Watch the complete **Kubernetes Real-World Labs (kubeadm)** tutorial series:
 | Lab # | Topic | Status |
 | :--- | :--- | :--- |
 | **01** | Build a 2-Node Kubernetes Cluster using kubeadm | ✅ Available |
-| **02** | Kubernetes Networking (CNI) | ✅ Available |
-| **03** | Deploy Your First Application | ✅ Available |
-| **04** | Kubernetes Services | ⏳ Upcoming |
-| **05** | Deployments and Scaling | ⏳ Upcoming |
-| **06** | ConfigMaps and Secrets | ⏳ Upcoming |
-| **07** | Ingress Controller | ⏳ Upcoming |
-| **08** | etcd Backup and Restore | ⏳ Upcoming |
-
+| **02** | Kubernetes CNI Networking (Flannel) | ✅ Available |
+| **03** | Scale a Kubernetes Cluster by Adding a Worker Node | ✅ Available |
+| **04** | Kubernetes Scheduling (Taints, Tolerations, Affinity) | ✅ Available |
+| **05** | Kubernetes Persistent Storage (PVC, Access Modes, Reclaim Policy) | ✅ Available |
+| **06** | Kubernetes Storage Troubleshooting (Real-World Scenarios) | ✅ Available |
+| **07** | Kubernetes LoadBalancer on Bare Metal using MetalLB | ✅ Available |
+| **08** | Kubernetes etcd Backup & Restore (Disaster Recovery) | ⏳ Upcoming |
 ---
 
 ## 📂 Repository Structure
