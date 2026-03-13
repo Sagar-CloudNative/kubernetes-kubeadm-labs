@@ -1,54 +1,91 @@
-# Lab 03: Adding Worker Nodes to a Kubernetes Cluster
+# 🚀 Lab 03: Adding a Worker Node to a Kubernetes Cluster
 
-In this lab, we expand our Kubernetes cluster by adding an additional worker node using the `kubeadm join` process. This is a fundamental task in production environments when your cluster requires more compute capacity to handle workloads.
+In this lab we expand our Kubernetes cluster by **adding a new worker node using kubeadm** and demonstrate how Kubernetes scales workloads across multiple nodes.
+
+In real production environments, cluster capacity must increase as applications grow. Kubernetes solves this using **horizontal scaling**, where we add more nodes instead of upgrading a single machine.
+
+This lab shows the **complete real-world process** of expanding a Kubernetes cluster.
 
 ---
 
 ## 🎥 Video Tutorial
 
-Watch the step-by-step cluster expansion guide here:
+Watch the complete **Kubernetes Real-World Labs Playlist**:
 
-👉 [**Watch the Lab 03 Tutorial**](https://youtu.be/tFtJE2BwmVI?si=ckN1OyUWs5PYZZMY)
+👉 https://youtube.com/playlist?list=PL4y5PiOmBnA8-pXEE3Xwz28_QF-geOurS
 
 ---
 
 ## 📘 Topics Covered
 
-* **Join Architecture:** How worker nodes communicate with the API server to register.
-* **Token Management:** Understanding `kubeadm` tokens and CA cert hashes.
-* **The Join Process:** Executing the bootstrap process on a fresh node.
-* **Node Verification:** Ensuring the new node transitions to the `Ready` state.
-* **Capacity Validation:** Checking the total cluster resources after scaling.
+In this lab you will learn:
+
+- How to inspect **node capacity**
+- How workloads behave when a cluster has limited nodes
+- The difference between **vertical scaling vs horizontal scaling**
+- How to prepare a **new worker node**
+- How to securely join a node using `kubeadm join`
+- How Kubernetes automatically schedules pods across nodes
 
 ---
 
-## 📁 Lab Resources
+## 📂 Lab Files
 
 | File | Description |
-| :--- | :--- |
-| [**commands.md**](./commands.md) | Technical commands to prepare the node and join the cluster. |
-| [**join-worker-node.md**](./join-worker-node.md) | Step-by-step guide for the worker node registration. |
+|-----|-------------|
+| commands.md | All commands used in this lab |
 
 ---
 
 ## 📋 Prerequisites
 
-> [!IMPORTANT]
-> To follow this lab, you must have an existing control plane running from the previous labs.
+You must complete the previous labs before starting this one:
 
-* **Lab 01 & 02 Completed:** You must have a Master node and at least one Worker node active.
-* **New Node Ready:** A new Linux instance (RHEL/Rocky/CentOS) with `kubeadm` and `containerd` installed.
-* **Network Connectivity:** The new node must be able to reach the Master node on port `6443`.
+1. **[Lab 01: Kubernetes Cluster Setup](../01-kubeadm-cluster-setup/README.md)**
+2. **[Lab 02: Kubernetes Networking (CNI)](../02-kubernetes-networking-cni/README.md)**
+
+Your cluster should currently have:
+
+- 1 Control Plane Node
+- 1 Worker Node
+- CNI networking installed
+
+---
+
+## 🧪 What We Will Demonstrate
+
+In this lab we simulate a **real Kubernetes capacity problem**.
+
+1️⃣ Deploy multiple pods to create workload pressure.
+
+2️⃣ Because the cluster has only **one worker node**, all pods run on the same machine.
+
+3️⃣ Add a **new worker node** to increase cluster capacity.
+
+4️⃣ Scale the application again and observe Kubernetes **automatically distributing pods across nodes**.
 
 ---
 
-## 🎯 Learning Results
+## 🎯 Result
 
-After completing this lab, you will understand:
-1. How nodes securely join a Kubernetes cluster.
-2. How to manage scaling by adding worker nodes on-demand.
-3. How to verify node health and troubleshoot common join issues.
+After completing this lab you will understand:
+
+- How Kubernetes clusters scale using **additional nodes**
+- How new worker nodes join a cluster securely
+- How Kubernetes **automatically schedules pods across nodes**
+- Why horizontal scaling is a core Kubernetes design principle
 
 ---
-| [« Lab 02: Networking](../02-kubernetes-networking-cni/README.md) | [Main Directory](../../README.md) | [Lab 04: Services »](../04-kubernetes-services/README.md) |
+
+## 🧠 Real-World Note
+
+In cloud platforms like **AWS, Azure, or GCP**, worker nodes are usually part of **node pools or auto scaling groups**.
+
+When workload increases, new nodes can be added automatically.
+
+In this lab environment we use **kubeadm**, so we manually add a worker node to understand how the cluster infrastructure works.
+
+---
+
+| [« Lab 02: Networking](../02-kubernetes-networking-cni/README.md) | [Main Directory](../../README.md) | [Lab 04: Kubernetes Services »](../04-kubernetes-services/README.md) |
 | :--- | :---: | ---: |
