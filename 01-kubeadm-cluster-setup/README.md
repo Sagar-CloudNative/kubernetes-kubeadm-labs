@@ -1,3 +1,4 @@
+![YouTube](https://img.shields.io/badge/YouTube-TechOpsTutorials-red)
 # Lab 01 – Build a 2-Node Kubernetes Cluster using kubeadm
 
 In this lab we build a **2-node Kubernetes cluster on a laptop** using:
@@ -69,11 +70,20 @@ Step 9 – Verify cluster
 ---
 
 # Expected Result
-kubectl get nodes
 
-NAME STATUS ROLES
-k8s-master Ready control-plane
-k8s-worker Ready worker
+Run:
+
+```bash
+kubectl get nodes
+```
+
+Example output:
+
+```text
+NAME         STATUS   ROLES           AGE   VERSION
+k8s-master   Ready    control-plane   10m   v1.29.x
+k8s-worker   Ready    <none>          8m    v1.29.x
+```
 
 ---
 
@@ -83,39 +93,18 @@ Your **multi-node Kubernetes cluster is now running locally.**
 
 # Repository Structure
 
+```
 01-kubeadm-cluster-setup
 ├── README.md
 ├── commands.md
 └── kubeadm-init.md
-
+```
 
 ---
 
 # Next Lab
 
 ➡ Kubernetes CNI Networking Explained (Flannel)
-
----
-
-# TechOps Tutorials
-
-Hands-on Kubernetes and DevOps labs designed for **real-world learning**.
----
-
-# Final Result
-
-After completing this lab you will have:
-
-k8s-master Ready control-plane
-k8s-worker Ready worker
-
-Your **2-node Kubernetes cluster will be fully functional**.
-
----
-
-# Next Lab
-
-➡ Kubernetes CNI Networking (Flannel)
 
 ---
 
