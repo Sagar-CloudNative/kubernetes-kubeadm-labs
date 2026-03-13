@@ -1,105 +1,184 @@
-Kubernetes Cluster Setup Guide (2-Node)
-This document outlines the step-by-step commands required to bootstrap a 2-node Kubernetes cluster using kubeadm, containerd, and dnf.
+# Kubernetes Cluster Setup Commands
 
-1. Node Preparation
-Set Hostnames
-Assign unique identities to each node for easier management.
+This file contains all commands used in the **Lab 01 – 2-Node Kubernetes Cluster Setup using kubeadm**.
 
-On Master Node:
+---
 
-Bash
+## 1. Set Hostnames
+
+Run on **Master Node**:
+```bash
 sudo hostnamectl set-hostname k8s-master
 exec bash
-On Worker Node:
+```
 
-Bash
+Run on **Worker Node**:
+```bash
 sudo hostnamectl set-hostname k8s-worker
 exec bash
-Configure Local DNS
-Update the /etc/hosts file on both nodes so they can communicate via hostname.
+```
 
-Bash
+## 2. Update /etc/hosts
+Run on **both nodes**:
+```bash
 sudo vi /etc/hosts
-Add the following (replace with your actual IPs):
+```
 
-Plaintext
-192.168.56.115 k8s-master
-192.168.56.116 k8s-worker
-Network Connectivity Check
-Ensure nodes can "see" each other.
+Example configuration:
+```text
+192.168.56.115   k8s-master
+192.168.56.116   k8s-worker
+```
 
-Bash
-# Check local IP
+## 3. Check IP Address
+```bash
 ip a
+```
 
-# Ping the opposite node
-ping k8s-worker  # Run from master
-ping k8s-master  # Run from worker
-2. System Configuration
-Run these commands on both nodes.
+## 4. Test Network Connectivity
+From **master node**:
+```bash
+ping <worker-ip>
+```
 
-Disable Swap
-Kubernetes requires swap to be disabled for the kubelet to function correctly.
+From **worker node**:
+```bash
+ping <master-ip>
+```
 
-Bash
-# Disable swap immediately
-sudo swapoff -a
+## 5. Test SSH Connectivity
+From **master**:
+```bash
+ssh user@<worker-ip>
+```
 
-# Disable swap permanently (Comment out the swap line)
-sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
-Update System & Disable Firewall
-In a production environment, you would open specific ports. For this lab, we will disable the firewall.
-
-Bash
+## 6. Update System Packages
+Run on **both nodes**:
+```bash
 sudo dnf update -y
-sudo systemctl disable firewalld --now
-Kernel Modules & Networking
-Configure the underlying Linux kernel to allow bridged traffic.
+```
 
-Bash
-# Load modules
+## 7. Disable Swap
+Check swap:
+```bash
+free -h
+```
+
+Disable swap:
+```bash
+sudo swapoff -a
+```
+
+Make it permanent:
+```bash
+sudo vi /etc/fstab
+```
+*(Comment out the swap line)*
+
+Verify:
+```bash
+free -h
+```
+
+## 8. Disable Firewall (Lab Environment)
+Check firewall status:
+```bash
+sudo systemctl status firewalld
+```
+
+Disable firewall:
+```bash
+sudo systemctl disable firewalld --now
+```
+
+Verify:
+```bash
+sudo systemctl status firewalld
+```
+
+## 9. Enable Required Kernel Modules
+Load modules:
+```bash
 sudo modprobe overlay
 sudo modprobe br_netfilter
+```
 
-# Persist modules on boot
-sudo tee /etc/modules-load.d/k8s.conf <<EOF
-overlay
-br_netfilter
-EOF
+Make them persistent:
+```bash
+echo "overlay" | sudo tee /etc/modules-load.d/overlay.conf
+echo "br_netfilter" | sudo tee /etc/modules-load.d/br_netfilter.conf
+```
 
-# Configure sysctl parameters
+Verify:
+```bash
+cat /etc/modules-load.d/overlay.conf
+cat /etc/modules-load.d/br_netfilter.conf
+```
+
+## 10. Configure Kernel Networking
+Create configuration:
+```bash
 sudo tee /etc/sysctl.d/k8s.conf <<EOF
-net.bridge.bridge-nf-call-iptables  = 1
 net.bridge.bridge-nf-call-ip6tables = 1
-net.ipv4.ip_forward                 = 1
+net.bridge.bridge-nf-call-iptables = 1
+net.ipv4.ip_forward = 1
 EOF
+```
 
-# Apply changes
+Apply settings:
+```bash
 sudo sysctl --system
-3. Install Container Runtime (containerd)
-Kubernetes requires a Container Runtime Interface (CRI). We will use containerd.
+```
 
-Bash
-# Add Docker repository
+Verify:
+```bash
+sysctl net.bridge.bridge-nf-call-iptables
+sysctl net.bridge.bridge-nf-call-ip6tables
+sysctl net.ipv4.ip_forward
+```
+
+## 11. Install Time Synchronization (chrony)
+```bash
+sudo dnf install -y chrony
+sudo systemctl enable chronyd --now
+```
+
+## 12. Install Container Runtime (containerd)
+Install repository tools:
+```bash
+sudo dnf install -y dnf-plugins-core
+```
+
+Add Docker repository:
+```bash
 sudo dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+```
 
-# Install containerd
+Install containerd:
+```bash
 sudo dnf install -y containerd.io
+```
 
-# Generate default configuration
+Create default configuration and set SystemdCgroup:
+```bash
 sudo mkdir -p /etc/containerd
-containerd config default | sudo tee /etc/containerd/config.toml > /dev/null
-
-# Set SystemdCgroup to true (Critical for K8s)
+containerd config default | sudo tee /etc/containerd/config.toml
 sudo sed -i 's/SystemdCgroup = false/SystemdCgroup = true/g' /etc/containerd/config.toml
+```
 
-# Start and enable containerd
+Start containerd:
+```bash
 sudo systemctl enable --now containerd
-4. Install Kubernetes Tools
-Install the core components: kubeadm, kubelet, and kubectl.
+```
 
-Add Kubernetes Repository
-Bash
+Check status:
+```bash
+sudo systemctl status containerd
+```
+
+## 13. Install Kubernetes Components
+Create Kubernetes repository:
+```bash
 sudo tee /etc/yum.repos.d/kubernetes.repo <<EOF
 [kubernetes]
 name=Kubernetes
@@ -108,9 +187,14 @@ enabled=1
 gpgcheck=1
 gpgkey=https://pkgs.k8s.io/core:/stable:/v1.29/rpm/repodata/repomd.xml.key
 EOF
-Install Packages
-Bash
-sudo dnf install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
+```
 
-# Enable the kubelet service
-sudo systemctl enable --now kubelet
+Install tools:
+```bash
+sudo dnf install -y kubelet kubeadm kubectl
+```
+
+Enable kubelet:
+```bash
+sudo systemctl enable kubelet
+```
