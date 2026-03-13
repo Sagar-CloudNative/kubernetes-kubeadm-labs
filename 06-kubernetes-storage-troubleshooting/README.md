@@ -10,9 +10,10 @@ In this lab we intentionally **break Kubernetes storage configurations** and deb
 
 ## 🎥 Video Tutorial
 
-Watch the full demo here:
+Watch the step-by-step cluster expansion guide here:
 
-https://youtu.be/6Tl8A9IF7Rs
+👉 [**Watch the Lab 06 Tutorial**](https://youtu.be/6Tl8A9IF7Rs?si=49cYf649N5eSYHCx)
+
 
 ---
 
