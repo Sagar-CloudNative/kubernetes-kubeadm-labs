@@ -29,7 +29,7 @@ Watch the full deep-dive into Kubernetes Networking here:
 | File | Description |
 | :--- | :--- |
 | [**commands.md**](./commands.md) | Technical commands to install and verify the CNI. |
-| [**networking-demo.md**](./networking-demo.md) | Step-by-step validation of cross-node communication. |
+| [**networking-demo.md**](./cni-networking-demo.md) | Step-by-step validation of cross-node communication. |
 
 ---
 
