@@ -1,4 +1,4 @@
-# 🚀 Lab 03: Adding Worker Nodes to a Kubernetes Cluster
+# Lab 03: Adding Worker Nodes to a Kubernetes Cluster
 
 In this lab, we expand our Kubernetes cluster by adding an additional worker node using the `kubeadm join` process. This is a fundamental task in production environments when your cluster requires more compute capacity to handle workloads.
 
