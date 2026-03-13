@@ -1,10 +1,7 @@
 # 💾 Lab 08 – Kubernetes etcd Backup & Restore (Disaster Recovery)
 
 ---
-
-## 🎬 Introduction
-
-We are learning **etcd Backup and Restore** in a kubeadm cluster.  
+This lab covers **etcd Backup and Restore** in a kubeadm cluster.  
 
 This is a 3-node setup:  
 - 1 Control Plane node  
