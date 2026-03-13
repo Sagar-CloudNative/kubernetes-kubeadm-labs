@@ -6,36 +6,37 @@ In this lab we build a **2-node Kubernetes cluster on a laptop** using:
 - Rocky Linux
 - kubeadm
 - containerd
+- Flannel CNI
 
-This setup is useful for:
-
-- Learning Kubernetes administration
-- DevOps practice labs
-- CKA exam preparation
-- Understanding real cluster architecture
+This lab simulates a **real Kubernetes multi-node environment** instead of a single-node setup like Minikube.
 
 ---
 
-## 🎥 YouTube Tutorial
+# 🎥 Full Video Tutorial
 
-Watch the full step-by-step demo here:
+Watch the complete step-by-step demo here:
 
-[https://youtu.be/YOUR_VIDEO_LINK](https://youtu.be/ir01Umpmefc?si=sGZNjiozQuU_uSTp)
+https://youtu.be/ir01Umpmefc
 
 ---
 
-# Cluster Architecture
+# Lab Architecture
 
-Control Plane Node
+Control Plane Node (k8s-master)
+
+Components:
 - kube-apiserver
-- controller-manager
 - scheduler
+- controller-manager
 - etcd
 
-Worker Node
+Worker Node (k8s-worker)
+
+Components:
 - kubelet
 - kube-proxy
 - container runtime
+- application pods
 
 ---
 
@@ -45,47 +46,68 @@ Worker Node
 |---|---|
 | Hypervisor | VirtualBox |
 | OS | Rocky Linux |
-| Master Node | 2 CPU / 4GB RAM |
-| Worker Node | 2 CPU / 2GB RAM |
+| Control Plane | 2 vCPU / 4GB RAM |
+| Worker Node | 2 vCPU / 2GB RAM |
 | Container Runtime | containerd |
-| Kubernetes Tool | kubeadm |
+| Kubernetes Installer | kubeadm |
+| Network Plugin | Flannel |
 
 ---
 
 # Cluster Setup Flow
 
-1 Create virtual machines  
-2 Configure hostnames and networking  
-3 Disable swap  
-4 Install container runtime  
-5 Install kubeadm / kubelet / kubectl  
-6 Initialize control plane  
-7 Install CNI plugin  
-8 Join worker node  
-9 Verify cluster  
+Step 1 – Create Virtual Machines  
+Step 2 – Configure hostnames and networking  
+Step 3 – Disable swap  
+Step 4 – Install container runtime (containerd)  
+Step 5 – Install kubeadm, kubelet, kubectl  
+Step 6 – Initialize control plane  
+Step 7 – Install CNI networking  
+Step 8 – Join worker node  
+Step 9 – Verify cluster
 
 ---
 
-# Lab Directory
+# Expected Result
+kubectl get nodes
 
-| File | Description |
-|---|---|
-| commands.md | All commands used in this lab |
-| kubeadm-init.md | kubeadm initialization details |
-
----
-
-# Final Result
-
-After completing this lab you will have:
-# Final Result
-
-After completing this lab you will have:
-
-
+NAME STATUS ROLES
 k8s-master Ready control-plane
 k8s-worker Ready worker
 
+---
+
+Your **multi-node Kubernetes cluster is now running locally.**
+
+---
+
+# Repository Structure
+
+01-kubeadm-cluster-setup
+├── README.md
+├── commands.md
+└── kubeadm-init.md
+
+
+---
+
+# Next Lab
+
+➡ Kubernetes CNI Networking Explained (Flannel)
+
+---
+
+# TechOps Tutorials
+
+Hands-on Kubernetes and DevOps labs designed for **real-world learning**.
+---
+
+# Final Result
+
+After completing this lab you will have:
+
+k8s-master Ready control-plane
+k8s-worker Ready worker
 
 Your **2-node Kubernetes cluster will be fully functional**.
 
