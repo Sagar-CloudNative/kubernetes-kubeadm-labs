@@ -1,6 +1,3 @@
-To keep your repository structure consistent, I have formatted this as a professional README.md for your Lab 02 folder. This follows the same visual style as your Lab 01 files.
-
-Plaintext
 # 🌐 Lab 02: Kubernetes Networking (CNI)
 
 In this lab, we explore the fundamentals of **Kubernetes Networking** and how a **CNI (Container Network Interface) plugin** enables seamless communication between Pods across different nodes.
