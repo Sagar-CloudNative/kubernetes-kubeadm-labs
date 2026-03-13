@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: storage-pod-2
+spec:
+  nodeSelector:
+    kubernetes.io/hostname: k8s-worker2   # change to your second worker node
+
+  containers:
+  - name: app
+    image: busybox
+    command: ["/bin/sh", "-c", "sleep 3600"]
+    volumeMounts:
+    - mountPath: /data
+      name: storage
+
+  volumes:
+  - name: storage
+    persistentVolumeClaim:
+      claimName: demo-pvc
