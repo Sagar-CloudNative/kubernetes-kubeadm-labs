@@ -23,8 +23,8 @@ Watch the complete **Kubernetes Real-World Labs (kubeadm)** tutorial series:
 | Lab # | Topic | Status |
 | :--- | :--- | :--- |
 | **01** | Build a 2-Node Kubernetes Cluster using kubeadm | ✅ Available |
-| **02** | Kubernetes Networking (CNI) | ✅ Available |
-| **03** | Deploy Your First Application | ✅ Available |
+| **02** | Kubernetes Networking (CNI) | ⏳ Upcoming |
+| **03** | Deploy Your First Application | ⏳ Upcoming |
 | **04** | Kubernetes Services | ⏳ Upcoming |
 | **05** | Deployments and Scaling | ⏳ Upcoming |
 | **06** | ConfigMaps and Secrets | ⏳ Upcoming |
