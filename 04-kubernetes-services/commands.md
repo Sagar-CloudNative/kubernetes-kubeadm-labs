@@ -1,134 +1,200 @@
 # ⚙️ Commands Used in Lab 04
 
-This document contains all commands used while creating and testing **Kubernetes Services**.
+This document lists all commands used to demonstrate Kubernetes scheduling behavior.
 
 ---
 
-## 1️⃣ Create a Test Pod
-
-We first deploy a simple **NGINX pod**.
+# 1️⃣ Verify Cluster
 
 ```bash
-kubectl run nginx-pod --image=nginx --port=80
-```
-
-Verify the pod:
-
-```bash
-kubectl get pods
-```
-
-Example output:
-
-```text
-NAME        READY   STATUS    AGE
-nginx-pod   1/1     Running   30s
+kubectl get nodes
 ```
 
 ---
 
-## 2️⃣ Expose the Pod as a Service
-
-Create a Kubernetes Service that exposes the pod.
+# 2️⃣ Check Control Plane Taint
 
 ```bash
-kubectl expose pod nginx-pod --port=80 --target-port=80 --name=nginx-service
+kubectl describe node k8s-master | grep -i taint
+```
+
+Expected:
+
+```
+node-role.kubernetes.io/control-plane:NoSchedule
 ```
 
 ---
 
-## 3️⃣ Verify the Service
-
-Check the created services.
+# 3️⃣ Taint Worker Node
 
 ```bash
-kubectl get services
+kubectl taint nodes k8s-worker dedicated=database:NoSchedule
 ```
 
-Example output:
+Verify:
 
-```text
-NAME            TYPE        CLUSTER-IP      PORT(S)
-kubernetes      ClusterIP   10.96.0.1       443/TCP
-nginx-service   ClusterIP   10.100.50.12    80/TCP
+```bash
+kubectl describe node k8s-worker | grep -i taint
 ```
 
 ---
 
-## 4️⃣ View Service Details
-
-Describe the service.
+# 4️⃣ Deploy Pod Without Toleration
 
 ```bash
-kubectl describe service nginx-service
+kubectl run test-pod --image=nginx
 ```
 
-This shows:
-
-- Service IP
-- Target pods
-- Endpoints
-- Ports
-
----
-
-## 5️⃣ Check Service Endpoints
-
-```bash
-kubectl get endpoints
-```
-
-Example:
-
-```text
-NAME            ENDPOINTS
-nginx-service   10.244.1.5:80
-```
-
-This confirms the service is correctly routing traffic to the pod.
-
----
-
-## 6️⃣ Test Connectivity Inside Cluster
-
-Run a temporary test pod:
-
-```bash
-kubectl run curl-pod --image=curlimages/curl -it --rm -- sh
-```
-
-Inside the pod run:
-
-```bash
-curl nginx-service
-```
-
-You should see the **NGINX welcome page HTML**.
-
----
-
-## 🔍 Troubleshooting
-
-Check pod status:
+Check placement:
 
 ```bash
 kubectl get pods -o wide
 ```
 
-Check service details:
+Pod should run on **k8s-worker2**.
+
+---
+
+# 5️⃣ Deploy Pod With Toleration
 
 ```bash
-kubectl describe svc nginx-service
+kubectl apply -f tolerant-pod.yaml
 ```
 
-Check endpoints:
+Verify:
 
 ```bash
-kubectl get endpoints
+kubectl get pods -o wide
 ```
 
 ---
 
-## ✅ Result
+# 6️⃣ Remove Demo Pods
 
-You successfully created a **Kubernetes Service** that provides stable networking and load balancing for pods.
+```bash
+kubectl delete pod test-pod tolerant-pod
+```
+
+---
+
+# 7️⃣ Remove Worker Taint
+
+```bash
+kubectl taint nodes k8s-worker dedicated=database:NoSchedule-
+```
+
+---
+
+# 8️⃣ Add Node Labels
+
+```bash
+kubectl label node k8s-worker disktype=hdd
+kubectl label node k8s-worker2 disktype=ssd
+```
+
+Verify:
+
+```bash
+kubectl get nodes -L disktype
+```
+
+---
+
+# 9️⃣ Deploy Pod Using Node Affinity
+
+```bash
+kubectl apply -f affinity-pod.yaml
+```
+
+Check placement:
+
+```bash
+kubectl get pods -o wide
+```
+
+Expected: Pod runs on **k8s-worker2**.
+
+---
+
+# 🔟 Cleanup Affinity Pod
+
+```bash
+kubectl delete pod affinity-pod
+```
+
+Remove labels:
+
+```bash
+kubectl label node k8s-worker disktype-
+kubectl label node k8s-worker2 disktype-
+```
+
+---
+
+# 1️⃣1️⃣ Deploy Pod Anti-Affinity Example
+
+```bash
+kubectl apply -f web-deploy.yaml
+```
+
+Check scheduling:
+
+```bash
+kubectl get pods -o wide
+```
+
+Pods should run on **different worker nodes**.
+
+---
+
+# 1️⃣2️⃣ Test Scaling
+
+Edit deployment:
+
+```
+replicas: 3
+```
+
+Apply again:
+
+```bash
+kubectl apply -f web-deploy.yaml
+```
+
+Verify:
+
+```bash
+kubectl get pods -o wide
+```
+
+Third pod should remain **Pending**.
+
+---
+
+# 1️⃣3️⃣ Inspect Pending Pod
+
+```bash
+kubectl describe pod <pending-pod>
+```
+
+---
+
+# 1️⃣4️⃣ Cleanup
+
+```bash
+kubectl delete deployment web-app
+```
+
+---
+
+# ✅ Result
+
+You demonstrated how Kubernetes scheduler evaluates:
+
+- Taints
+- Tolerations
+- Node Affinity
+- Pod Anti-Affinity
+
+These mechanisms are widely used in **production Kubernetes clusters**.
