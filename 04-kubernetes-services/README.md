@@ -11,7 +11,7 @@ A **Service** solves this problem by providing a **stable virtual IP and DNS nam
 
 Watch the step-by-step cluster expansion guide here:
 
-👉 [**Watch the Lab 03 Tutorial**](https://youtu.be/vSJ2Q2gE6X8?si=jjO-UAycs666LN4Z)
+👉 [**Watch the Lab 04 Tutorial**](https://youtu.be/vSJ2Q2gE6X8?si=jjO-UAycs666LN4Z)
 ---
 
 ## 📘 Topics Covered
