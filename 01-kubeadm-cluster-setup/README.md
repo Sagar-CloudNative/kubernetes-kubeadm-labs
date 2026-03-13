@@ -20,7 +20,7 @@ This setup is useful for:
 
 Watch the full step-by-step demo here:
 
-https://youtu.be/YOUR_VIDEO_LINK
+[https://youtu.be/YOUR_VIDEO_LINK](https://youtu.be/ir01Umpmefc?si=sGZNjiozQuU_uSTp)
 
 ---
 
