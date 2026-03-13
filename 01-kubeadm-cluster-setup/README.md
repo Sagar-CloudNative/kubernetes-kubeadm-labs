@@ -13,27 +13,27 @@ This lab simulates a **real Kubernetes multi-node environment** instead of a sin
 
 ---
 
-# 🎥 Full Video Tutorial
+## 🎥 Full Video Tutorial
 
-Watch the complete step-by-step demo here:
-
-https://youtu.be/ir01Umpmefc
+[▶ Watch the Full Tutorial on YouTube](https://youtu.be/ir01Umpmefc)
 
 ---
 
-# Lab Architecture
+## Lab Architecture
 
-Control Plane Node (k8s-master)
+### Control Plane Node (k8s-master)
 
 Components:
+
 - kube-apiserver
 - scheduler
 - controller-manager
 - etcd
 
-Worker Node (k8s-worker)
+### Worker Node (k8s-worker)
 
 Components:
+
 - kubelet
 - kube-proxy
 - container runtime
@@ -41,7 +41,7 @@ Components:
 
 ---
 
-# Lab Environment
+## Lab Environment
 
 | Component | Details |
 |---|---|
@@ -55,21 +55,21 @@ Components:
 
 ---
 
-# Cluster Setup Flow
+## Cluster Setup Flow
 
-Step 1 – Create Virtual Machines  
-Step 2 – Configure hostnames and networking  
-Step 3 – Disable swap  
-Step 4 – Install container runtime (containerd)  
-Step 5 – Install kubeadm, kubelet, kubectl  
-Step 6 – Initialize control plane  
-Step 7 – Install CNI networking  
-Step 8 – Join worker node  
-Step 9 – Verify cluster
+1. Create Virtual Machines  
+2. Configure hostnames and networking  
+3. Disable swap  
+4. Install container runtime (containerd)  
+5. Install kubeadm, kubelet, kubectl  
+6. Initialize control plane  
+7. Install CNI networking  
+8. Join worker node  
+9. Verify cluster
 
 ---
 
-# Expected Result
+## Expected Result
 
 Run:
 
