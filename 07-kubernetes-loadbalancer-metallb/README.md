@@ -1,9 +1,16 @@
 # 🖥️ Lab 07 – Kubernetes LoadBalancer on Bare Metal using MetalLB
 
-Welcome to **Lab 07** of the Kubernetes Real-World Labs series.  
 In this lab, we simulate a **real LoadBalancer** in a bare-metal kubeadm cluster using **MetalLB**.  
 
 By the end, your service will have an external IP — just like in cloud environments.
+
+---
+
+## 🎥 Video Tutorial
+
+Watch the step-by-step cluster expansion guide here:
+
+👉 [**Watch the Lab 07 Tutorial**](https://youtu.be/QDl6I5tGn8s?si=zc-gKm009FBtH4to)
 
 ---
 
