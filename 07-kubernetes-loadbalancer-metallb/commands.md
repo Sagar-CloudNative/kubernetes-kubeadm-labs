@@ -26,7 +26,7 @@ kubectl rollout restart daemonset kube-proxy -n kube-system
 Apply the native MetalLB manifest to install the controller and speaker pods.
 
 ```bash
-kubectl apply -f [https://raw.githubusercontent.com/metallb/metallb/main/config/manifests/metallb-native.yaml](https://raw.githubusercontent.com/metallb/metallb/main/config/manifests/metallb-native.yaml)
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/main/config/manifests/metallb-native.yaml
 
 # Verify the pods are running
 kubectl get pods -n metallb-system
@@ -107,7 +107,7 @@ kubectl delete ipaddresspool my-ip-pool -n metallb-system
 kubectl delete l2advertisement l2-advertisement -n metallb-system
 
 # Uninstall MetalLB
-kubectl delete -f [https://raw.githubusercontent.com/metallb/metallb/main/config/manifests/metallb-native.yaml](https://raw.githubusercontent.com/metallb/metallb/main/config/manifests/metallb-native.yaml)
+kubectl delete -f https://raw.githubusercontent.com/metallb/metallb/main/config/manifests/metallb-native.yaml
 
 # Verify deletion
 kubectl get pods -n metallb-system
