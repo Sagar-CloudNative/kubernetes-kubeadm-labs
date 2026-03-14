@@ -22,7 +22,7 @@ Apply the Flannel network manifest to enable Pod-to-Pod communication.
 
 ```bash
 # Apply Flannel configuration
-kubectl apply -f [https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml](https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml)
+kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
 
 # Verify Flannel pods are running
 kubectl get pods -n kube-flannel
