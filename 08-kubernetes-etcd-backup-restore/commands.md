@@ -29,7 +29,7 @@ kubectl describe pod etcd-k8s-master -n kube-system | grep Image
 
 # Download etcd binaries
 ETCD_VER=v3.5.16
-wget [https://github.com/etcd-io/etcd/releases/download/$](https://github.com/etcd-io/etcd/releases/download/$){ETCD_VER}/etcd-${ETCD_VER}-linux-amd64.tar.gz
+wget https://github.com/etcd-io/etcd/releases/download/${ETCD_VER}/etcd-${ETCD_VER}-linux-amd64.tar.gz
 
 # Extract binaries
 tar -xvf etcd-${ETCD_VER}-linux-amd64.tar.gz
