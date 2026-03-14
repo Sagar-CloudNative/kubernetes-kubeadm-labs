@@ -47,7 +47,7 @@ Kubernetes requires a CNI (Container Network Interface) plugin for Pod-to-Pod co
 
 **Install Flannel:**
 ```bash
-kubectl apply -f [https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml](https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml)
+kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
 ```
 
 **Verify the network pods:**
