@@ -47,7 +47,10 @@ Watch the complete **Kubernetes Real-World Labs (kubeadm)** tutorial series:
 | **05** | Kubernetes Persistent Storage (PVC, Access Modes, Reclaim Policy) | ✅ Available |
 | **06** | Kubernetes Storage Troubleshooting (Real-World Scenarios) | ✅ Available |
 | **07** | Kubernetes LoadBalancer on Bare Metal using MetalLB | ✅ Available |
-| **08** | Kubernetes etcd Backup & Restore (Disaster Recovery) | ⏳ Upcoming |
+| **08** | Kubernetes etcd Backup & Restore (Disaster Recovery) | ✅ Available |
+| **09** | Blue-Green Deployment in Kubernetes | ✅ Available |
+| **10** | Canary Deployment in Kubernetes  | ⏳ Upcoming  |
+
 ---
 
 ## 🚀 Quick Start
