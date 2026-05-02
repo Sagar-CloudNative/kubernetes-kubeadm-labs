@@ -216,5 +216,4 @@ kubectl get pods -n metallb-system
 
 ---
 
-| [« Lab 06: Storage Troubleshooting](../06-kubernetes-storage-troubleshooting/README.md) | [Main Directory](../../README.md) | [Lab 08: etcd Backup & Restore »](../08-kubernetes-etcd-backup-restore/README.md) |
-| :--- | :---: | ---: |
+[⬅️ Previous](../06-kubernetes-storage-troubleshooting) | [🏠 Home](../README.md) | [Next Lab: etcd Backup & Restore ➡️](../08-kubernetes-etcd-backup-restore)
