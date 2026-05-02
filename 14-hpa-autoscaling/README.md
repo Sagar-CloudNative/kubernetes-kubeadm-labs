@@ -57,5 +57,5 @@ graph TD
 *   **Avoid Manual Scaling:** Once HPA is managed for a deployment, do not use `kubectl scale`.
 
 ---
-| [« Lab 13: RBAC Deep Dive](../13-kubernetes-rbac/README.md) | [Main Directory](https://github.com/Sagar-CloudNative/kubernetes-kubeadm-labs) | [Next: Lab 15 »](../../) |
-| :--- | :---: | ---: |
+
+[⬅️ Previous](../13-kubernetes-rbac) | [🏠 Home](../README.md) | [Next Lab: Control Plane Internals ➡️](../15-control-plane-internals)
