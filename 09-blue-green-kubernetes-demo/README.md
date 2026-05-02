@@ -203,4 +203,8 @@ If you found this helpful:
 
 - ⭐ Star this repository  
 - 👍 Like the video  
-- 🔔 Subscribe for more DevOps tutorials  
+- 🔔 Subscribe for more DevOps tutorials
+
+---
+
+[⬅️ Previous](../08-kubernetes-etcd-backup-restore) | [🏠 Home](../README.md) | [Next Lab: Canary Deployment ➡️](../10-kubernetes-canary-deployment)
