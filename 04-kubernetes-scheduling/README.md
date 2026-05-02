@@ -131,5 +131,4 @@ Production clusters commonly use these features for:
 
 ---
 
-| [« Lab 03: Add Worker Node](../03-add-worker-node/README.md) | [Main Directory](../../README.md) | [Lab 05: Kubernetes Deployments »](../05-kubernetes-deployments/README.md) |
-| :--- | :---: | ---: |
+[⬅️ Previous](../03-add-worker-node) | [🏠 Home](../README.md) | [Next Lab: Persistent Storage ➡️](../05-kubernetes-persistent-storage)
