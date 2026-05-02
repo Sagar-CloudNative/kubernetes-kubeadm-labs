@@ -87,5 +87,4 @@ In this lab environment we use **kubeadm**, so we manually add a worker node to 
 
 ---
 
-| [« Lab 02: Networking](../02-kubernetes-networking-cni/README.md) | [Main Directory](../../README.md) | [Lab 04: Kubernetes Services »](../04-kubernetes-services/README.md) |
-| :--- | :---: | ---: |
+[⬅️ Previous](../02-kubernetes-networking-cni) | [🏠 Home](../README.md) | [Next Lab: Scheduling ➡️](../04-kubernetes-scheduling)
