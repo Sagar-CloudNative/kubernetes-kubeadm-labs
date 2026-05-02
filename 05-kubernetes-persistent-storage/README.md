@@ -394,8 +394,5 @@ You have successfully explored **persistent storage in a real multi-node Kuberne
 
 ## Lab Navigation
 
-| Previous Lab | Main Directory | Next Lab |
-|:-------------|:--------------:|---------:|
-| [« Lab 04: Kubernetes Services](../04-kubernetes-services/README.md) | [Main Directory](../../README.md) | [Lab 06: Kubernetes ConfigMaps & Secrets »](../06-kubernetes-configmaps-secrets/README.md) |
-
+[⬅️ Previous](../04-kubernetes-scheduling) | [🏠 Home](../README.md) | [Next Lab: Storage Troubleshooting ➡️](../06-kubernetes-storage-troubleshooting)
 ---
