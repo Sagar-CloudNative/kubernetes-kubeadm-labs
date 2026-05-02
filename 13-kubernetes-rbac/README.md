@@ -18,6 +18,20 @@ Watch the full practical guide on Kubernetes RBAC:
 * **Authentication:** "Who are you?" (Certificates, Tokens).
 * **Authorization:** "What can you do?" (RBAC).
 
+### 🗺️ RBAC Architecture Diagram
+```mermaid
+graph LR
+    subgraph Namespace_Scope
+    A[ServiceAccount/User] -- RoleBinding --> B[Role]
+    B --> C((Pods/Services))
+    end
+
+    subgraph Cluster_Scope
+    D[ServiceAccount/User] -- ClusterRoleBinding --> E[ClusterRole]
+    E --> F((Nodes/PVs/Namespaces))
+    end
+```
+
 ### 2. Scope of Permissions
 | Component | Scope | Use Case |
 | :--- | :--- | :--- |
