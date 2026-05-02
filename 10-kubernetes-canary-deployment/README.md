@@ -85,5 +85,5 @@ After completing this lab, you will understand:
 
 ⭐ If you find this helpful, consider starring the repo!
 ---
-| [« Lab 09: Blue-Green](../09-blue-green-deployment/README.md) | [Main Directory](../../README.md) | [Lab 11: Upcoming »](../../) |
+| [« Lab 09: Blue-Green](../09-blue-green-kubernetes-demo/README.md) | [Main Directory](../README.md) | [Lab 11: Upcoming »](../../) |
 | :--- | :---: | ---: |
