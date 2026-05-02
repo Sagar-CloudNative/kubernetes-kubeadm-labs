@@ -61,5 +61,5 @@ In production, **MTTR (Mean Time To Recovery)** is the most important metric.
 3. **Safety First:** Always have a "Plan B" (Rollback) ready before you execute "Plan A" (Deployment).
 
 ---
-| [« Lab 11: Strategies Comparison](../11-deployment-strategies-comparison/README.md) | [Main Directory](https://github.com/Sagar-CloudNative/kubernetes-kubeadm-labs) | [Next: RBAC »](../../) |
-| :--- | :---: | ---: |
+
+[⬅️ Previous](../11-deployment-strategies-comparison) | [🏠 Home](../README.md) | [Next Lab: RBAC ➡️](../13-kubernetes-rbac)
