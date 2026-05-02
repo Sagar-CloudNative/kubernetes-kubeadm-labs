@@ -111,3 +111,7 @@ Your **multi-node Kubernetes cluster is now running locally.**
 # TechOps Tutorials
 
 Hands-on Kubernetes and DevOps labs designed for **real-world learning**.
+
+---
+
+[🏠 Home](../README.md) | [Next Lab: CNI Networking ➡️](../02-kubernetes-networking-cni)
