@@ -56,5 +56,5 @@ graph TD
 *   **Independence:** The Kubelet can run and manage containers even if the API Server is completely offline.
 
 ---
-| [« Lab 14: HPA Auto-Scaling](../14-hpa-autoscaling/README.md) | [Main Directory](https://github.com/Sagar-CloudNative/kubernetes-kubeadm-labs) | [Next: Lab 16 »](../../) |
-| :--- | :---: | ---: |
+
+[⬅️ Previous](../14-hpa-autoscaling) | [🏠 Home](../README.md) | [Next Lab: Namespace Governance ➡️](../16-namespace-governance-cluster-control)
