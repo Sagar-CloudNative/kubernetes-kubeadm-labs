@@ -61,3 +61,7 @@ Static Pod is managed by **kubelet**, which ensures it’s always running.
 9. Validate recovery  
 
 **Rule:** Always restore to a **new directory**, never overwrite existing data.
+
+---
+
+[⬅️ Previous](../07-kubernetes-loadbalancer-metallb) | [🏠 Home](../README.md) | [Next Lab: Blue-Green Deployment ➡️](../09-blue-green-kubernetes-demo)
