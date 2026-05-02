@@ -85,5 +85,5 @@ After completing this lab, you will understand:
 
 ⭐ If you find this helpful, consider starring the repo!
 ---
-| [« Lab 09: Blue-Green](../09-blue-green-kubernetes-demo/README.md) | [Main Directory](../README.md) | [Lab 11: Upcoming »](../../) |
-| :--- | :---: | ---: |
+
+[⬅️ Previous](../09-blue-green-kubernetes-demo) | [🏠 Home](../README.md) | [Next Lab: Deployment Comparison ➡️](../11-deployment-strategies-comparison)
