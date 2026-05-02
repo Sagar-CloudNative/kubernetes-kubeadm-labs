@@ -68,5 +68,5 @@ graph LR
 * **Namespace Isolation:** Use Roles over ClusterRoles whenever possible to limit the "blast radius" of a compromised account.
 
 ---
-| [« Lab 12: Production Workflow](../12-production-deployment-workflow/README.md) | | [Main Directory](../../README.md) | [Next: HPA »](../../) |
+| [« Lab 12: Production Workflow](../12-production-deployment-workflow/README.md) | [Main Directory](../../README.md) | [Next: HPA »](../../) |
 | :--- | :---: | ---: |
