@@ -56,3 +56,6 @@ After completing this lab, you will be able to:
 
 > [!TIP]
 > **Pro-Tip:** Once networking is up, all your core Kubernetes system pods (like CoreDNS) will finally move into a `Running` state!
+
+---
+[⬅️ Previous](../01-kubeadm-cluster-setup) | [🏠 Home](../README.md) | [Next Lab: Add Worker Node ➡️](../03-add-worker-node)
