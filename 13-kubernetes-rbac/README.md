@@ -69,4 +69,4 @@ graph LR
 
 ---
 
-[⬅️ Previous](../12-production-deployment-workflow) | [🏠 Home](../README.md) | [Next Lab: HPA Autoscaling ➡️](../14-hpa-autoscaling
+[⬅️ Previous](../12-production-deployment-workflow) | [🏠 Home](../README.md) | [Next Lab: HPA Autoscaling ➡️](../14-hpa-autoscaling)
