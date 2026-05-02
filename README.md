@@ -36,20 +36,26 @@ Watch the complete **Kubernetes Real-World Labs (kubeadm)** tutorial series:
 
 ---
 
-## 📚 Labs Included
+### 📚 Labs Included
 
 | Lab # | Topic | Status |
 | :--- | :--- | :--- |
-| **01** | Build a 2-Node Kubernetes Cluster using kubeadm | ✅ Available |
-| **02** | Kubernetes CNI Networking (Flannel) | ✅ Available |
-| **03** | Scale a Kubernetes Cluster by Adding a Worker Node | ✅ Available |
-| **04** | Kubernetes Scheduling (Taints, Tolerations, Affinity) | ✅ Available |
-| **05** | Kubernetes Persistent Storage (PVC, Access Modes, Reclaim Policy) | ✅ Available |
-| **06** | Kubernetes Storage Troubleshooting (Real-World Scenarios) | ✅ Available |
-| **07** | Kubernetes LoadBalancer on Bare Metal using MetalLB | ✅ Available |
-| **08** | Kubernetes etcd Backup & Restore (Disaster Recovery) | ✅ Available |
-| **09** | Blue-Green Deployment in Kubernetes | ✅ Available |
-| **10** | Canary Deployment in Kubernetes  | ⏳ Upcoming  |
+| 01 | [Build a 2-Node Kubernetes Cluster using kubeadm](./01-kubeadm-cluster-setup) | ✅ Available |
+| 02 | [Kubernetes CNI Networking (Flannel)](./02-kubernetes-networking-cni) | ✅ Available |
+| 03 | [Scale a Kubernetes Cluster by Adding a Worker Node](./03-add-worker-node) | ✅ Available |
+| 04 | [Kubernetes Scheduling (Taints, Tolerations, Affinity)](./04-kubernetes-scheduling) | ✅ Available |
+| 05 | [Kubernetes Persistent Storage (PVC, Access Modes)](./05-kubernetes-persistent-storage) | ✅ Available |
+| 06 | [Kubernetes Storage Troubleshooting](./06-kubernetes-storage-troubleshooting) | ✅ Available |
+| 07 | [Kubernetes LoadBalancer on Bare Metal (MetalLB)](./07-kubernetes-loadbalancer-metallb) | ✅ Available |
+| 08 | [Kubernetes etcd Backup & Restore](./08-kubernetes-etcd-backup-restore) | ✅ Available |
+| 09 | [Blue-Green Deployment in Kubernetes](./09-blue-green-kubernetes-demo) | ✅ Available |
+| 10 | [Canary Deployment in Kubernetes](./10-kubernetes-canary-deployment) | ✅ Available |
+| 11 | [Deployment Strategies Comparison](./11-deployment-strategies-comparison) | ✅ Available |
+| 12 | [Production Deployment Workflow](./12-production-deployment-workflow) | ✅ Available |
+| 13 | [Kubernetes RBAC (Roles & RoleBindings)](./13-kubernetes-rbac) | ✅ Available |
+| 14 | [HPA Autoscaling (Horizontal Pod Autoscaler)](./14-hpa-autoscaling) | ✅ Available |
+| 15 | [Control Plane Internals & Troubleshooting](./15-control-plane-internals) | ✅ Available |
+| 16 | Namespace Governance & Cluster Control | ⏳ Upcoming |
 
 ---
 
