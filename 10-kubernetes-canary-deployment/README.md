@@ -1,6 +1,6 @@
 # 🚀 Canary Deployment in Kubernetes
 
-This lab demonstrates **Canary Deployment in Kubernetes** using a simple and practical approach.
+In this lab, we implement a **Canary Deployment** strategy. Unlike Blue-Green, where you switch traffic all at once, a Canary release introduces the new version to a small subset of users (e.g., 10%) before rolling it out to the entire cluster.
 
 We simulate traffic split using replicas and understand how gradual rollout and rollback works in real environments.
 
@@ -12,13 +12,21 @@ We simulate traffic split using replicas and understand how gradual rollout and 
 
 ---
 
-## 📌 What You Will Learn
+## 🎥 Video Tutorial
 
-✔ What is Canary Deployment  
-✔ How traffic is distributed across pods  
-✔ How to simulate 90/10 traffic split  
-✔ How to gradually increase traffic  
-✔ How to safely rollback  
+Watch the step-by-step implementation and theory:
+
+👉 [**Watch the Lab 10 Tutorial**](https://youtu.be/b8KIEIkV9zI?si=w06ofQDdoDTL1K17)
+
+---
+
+## 📘 Topics Covered
+
+* **The "Canary" Concept:** Why gradual releases reduce production risk.
+* **Traffic Splitting:** How Kubernetes uses replica ratios (9:1) to simulate traffic percentage.
+* **Monitoring & Validation:** Observing real user impact before scaling.
+* **Manual Rollback:** Quickly reverting to the stable version if the canary fails.
+* **Limitations:** Understanding why standard Kubernetes Services provide "approximate" rather than "exact" traffic splitting.
 
 ---
 
@@ -33,13 +41,16 @@ We simulate traffic split using replicas and understand how gradual rollout and 
 7️⃣ Rollback if needed  
 
 ---
+## 📂 Lab Files
 
-## 📂 Commands & YAML Files
+| File | Description |
+| :--- | :--- |
+| [**commands.md**](./commands.md) | Full sequence of commands for the demo |
+| [**v1-deployment.yaml**](./v1-deployment.yaml) | Stable version (9 replicas) |
+| [**v2-deployment.yaml**](./v2-deployment.yaml) | Canary version (1 replica) |
+| [**service.yaml**](./service.yaml) | Shared NodePort service for both versions |
 
-👉 Full step-by-step lab guide:
-
-📄 [commands.md](./commands.md)
-
+---
 ---
 
 ## 📁 Folder Structure
@@ -64,14 +75,15 @@ Traffic is distributed based on **number of pods**, so results are approximate.
 
 ---
 
-## 📌 Summary
+## 🎯 Learning Results
 
-Canary Deployment helps you:
-
-- Release changes safely  
-- Test in real conditions  
-- Reduce production risk  
-
+After completing this lab, you will understand:
+1. How to run two versions of the same app simultaneously using shared labels.
+2. How to achieve a **90/10 traffic split** using pod scaling.
+3. How to perform a zero-downtime transition from V1 to V2.
 ---
 
 ⭐ If you find this helpful, consider starring the repo!
+---
+| [« Lab 09: Blue-Green](../09-blue-green-deployment/README.md) | [Main Directory](../../README.md) | [Lab 11: Upcoming »](../../) |
+| :--- | :---: | ---: |
