@@ -107,4 +107,4 @@ If you find these labs helpful:
 ---
 
 > [!TIP]
-> **Getting Started?** Begin with [Lab 01: Cluster Setup](./01-kubeadm-cluster-setup/commands.md) to prepare your environment.
+> **Getting Started?** Begin with [Lab 01: Cluster Setup](./01-kubeadm-cluster-setup/README.md) to prepare your environment.
