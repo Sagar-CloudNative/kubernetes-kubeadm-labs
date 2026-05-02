@@ -54,5 +54,4 @@ After completing this lab you will understand:
 
 ---
 
-| [« Lab 05: Persistent Storage](../05-kubernetes-persistent-storage/README.md) | [Main Directory](../../README.md) | [Lab 07: Kubernetes LoadBalancer on Bare Metal »](../07-kubernetes-loadbalancer-metallb/README.md) |
-| :--- | :---: | ---: |
+[⬅️ Previous](../05-kubernetes-persistent-storage) | [🏠 Home](../README.md) | [Next Lab: MetalLB LoadBalancer ➡️](../07-kubernetes-loadbalancer-metallb)
