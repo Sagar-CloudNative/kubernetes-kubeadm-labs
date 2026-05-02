@@ -60,5 +60,5 @@ Release to a small group (10%) then scale up.
 * **Monitoring:** For Canary deployments, you **must** have a dashboard. You cannot "guess" if the 10% of users are having a good experience.
 
 ---
-| [« Lab 10: Canary Demo](../10-canary-deployment/README.md) | [Main Directory](../../README.md) | [Next: Production Deployment Workflow »](../../) |
-| :--- | :---: | ---: |
+
+[⬅️ Previous](../10-kubernetes-canary-deployment) | [🏠 Home](../README.md) | [Next Lab: Production Workflow ➡️](../12-production-deployment-workflow)
