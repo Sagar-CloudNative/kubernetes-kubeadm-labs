@@ -94,7 +94,7 @@ This is Part 2 of RBAC. Instead of definitions and basics, this lab focuses on r
 
 ## ▶️ Watch the Video
 
-👉 [**Kubernetes RBAC Advanced — YouTube**](https://www.youtube.com/@TechOpsTutorials)
+👉 [**Kubernetes RBAC Advanced — YouTube**](https://youtu.be/Wd4H3pGDew0?si=K-nDOfgzcVl0DAGX)
 
 ---
 
