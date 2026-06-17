@@ -85,7 +85,7 @@ This issue is specific to clusters with **multiple network adapters** — for ex
 
 ## ▶️ Watch the Video
 
-👉 [**Grafana DNS Flannel Troubleshooting — YouTube**](https://www.youtube.com/@TechOpsTutorials)
+👉 [**Grafana DNS Flannel Troubleshooting — YouTube**](https://youtu.be/ph6tQmMfUvM?si=avhWOKJgqIJg4yPN)
 
 ---
 
