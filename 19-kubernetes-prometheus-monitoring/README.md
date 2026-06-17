@@ -105,7 +105,7 @@ See [`promql-queries.md`](./promql-queries.md) for all queries with explanations
 
 ## ▶️ Watch the Video
 
-👉 [**Monitor Kubernetes with Prometheus — YouTube**](https://www.youtube.com/@TechOpsTutorials)
+👉 [**Monitor Kubernetes with Prometheus — YouTube**](https://youtu.be/heLmnidDLAI?si=E4ZMPLmjTY65HGCy)
 
 ---
 
