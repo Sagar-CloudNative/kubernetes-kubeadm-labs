@@ -78,7 +78,7 @@ In a shared Kubernetes cluster, one team can deploy workloads without setting an
 
 ## ▶️ Watch the Video
 
-👉 [**Namespace Governance & Cluster Control — YouTube**](https://www.youtube.com/@TechOpsTutorials)
+👉 [**Namespace Governance & Cluster Control — YouTube**](https://www.youtube.com/watch?v=fhYWxlbyNaA)
 
 ---
 
@@ -95,7 +95,3 @@ kubectl get ns
 ## ⬅️ Previous Lab
 
 [Lab 15 — Control Plane Internals & Troubleshooting](../15-control-plane-internals)
-
-## ➡️ Next Lab
-
-Lab 17 — Coming Soon
