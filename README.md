@@ -37,7 +37,6 @@ Watch the complete **Kubernetes Real-World Labs (kubeadm)** tutorial series:
 ---
 
 ### 📚 Labs Included
-
 | Lab # | Topic | Status |
 | :--- | :--- | :--- |
 | 01 | [Build a 2-Node Kubernetes Cluster using kubeadm](./01-kubeadm-cluster-setup) | ✅ Available |
@@ -55,7 +54,12 @@ Watch the complete **Kubernetes Real-World Labs (kubeadm)** tutorial series:
 | 13 | [Kubernetes RBAC (Roles & RoleBindings)](./13-kubernetes-rbac) | ✅ Available |
 | 14 | [HPA Autoscaling (Horizontal Pod Autoscaler)](./14-hpa-autoscaling) | ✅ Available |
 | 15 | [Control Plane Internals & Troubleshooting](./15-control-plane-internals) | ✅ Available |
-| 16 | Namespace Governance & Cluster Control | ⏳ Upcoming |
+| 16 | [Namespace Governance & Cluster Control](./16-namespace-governance) | ✅ Available |
+| 17 | [Kubernetes RBAC: Advanced Real-World Scenarios](./17-kubernetes-rbac-advanced) | ✅ Available |
+| 18 | [Helm in Kubernetes: Install, Use & Manage Applications](./18-helm-kubernetes) | ✅ Available |
+| 19 | [Monitor Kubernetes with Prometheus Using Helm](./19-kubernetes-prometheus-monitoring) | ✅ Available |
+| 20 | [Fix Grafana Plugin Error — DNS, CoreDNS & Flannel Troubleshooting](./20-grafana-dns-flannel-troubleshooting) | ✅ Available |
+| 21 | [Access Grafana Externally — NodePort vs LoadBalancer vs Ingress](./21-grafana-external-access) | ✅ Available |
 
 ---
 
