@@ -3,7 +3,7 @@
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-Labs-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Platform](https://img.shields.io/badge/Platform-RHEL%20%7C%20Rocky%20Linux-red)
-![YouTube](https://img.shields.io/badge/YouTube-Subscribe-red?logo=youtube)
+[![YouTube](https://img.shields.io/badge/YouTube-Subscribe-red?logo=youtube)](https://www.youtube.com/@TechOpsTutorials)
 
 This lab series uses a simple multi-node Kubernetes cluster built with **kubeadm**.
 
