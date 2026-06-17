@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: big-app
+  namespace: team-alpha
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: big
+  template:
+    metadata:
+      labels:
+        app: big
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.27
+        imagePullPolicy: IfNotPresent
+        resources:
+          requests:
+            cpu: "500m"
+            memory: "512Mi"
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
