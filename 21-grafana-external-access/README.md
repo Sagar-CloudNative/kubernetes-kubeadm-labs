@@ -100,7 +100,7 @@ Resolve-DnsName grafana.techopstutorials.local
 
 ## ▶️ Watch the Video
 
-👉 [**Access Grafana Externally — YouTube**](https://www.youtube.com/@TechOpsTutorials)
+👉 [**Access Grafana Externally — YouTube**](http://youtube.com/watch?v=lV4u5lUZdm4)
 
 ---
 
