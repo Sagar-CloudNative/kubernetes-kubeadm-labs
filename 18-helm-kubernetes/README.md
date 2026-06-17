@@ -86,7 +86,7 @@ Helm is the **package manager for Kubernetes**. Just like `apt` on Ubuntu or `dn
 
 ## ▶️ Watch the Video
 
-👉 [**Helm in Kubernetes — YouTube**](https://www.youtube.com/@TechOpsTutorials)
+👉 [**Helm in Kubernetes — YouTube**](https://youtu.be/jr1xVETnA_E?si=VxsL-HLq7_XLOwo5)
 
 ---
 
